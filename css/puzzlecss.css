@@ -1,0 +1,149 @@
+body, h1, h2, h3, h4, h5, h6
+{
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	color: #5d6a86;
+}
+
+body
+{
+	cursor: default;
+	font-size: small;
+}
+
+.ecw-answerbox
+{
+	color: white;
+	background-color: transparent;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 1px;
+	display: block;
+	padding: .75em;
+	width: 240pt;
+  font-weight: 500;
+}
+
+.ecw-box
+{
+	border-style: solid;
+	border-width: 1pt;
+	cursor: pointer;
+	font-size: .12in;
+	font-weight: bold;
+	height: .18in;
+	overflow: hidden;
+	text-align: center;
+	width: .18in;
+}
+
+.ecw-boxcheated_sel
+{
+	background-color: #191c24;
+	border-color: white;
+	color: white;
+}
+
+.ecw-boxcheated_unsel
+{
+	background-color: #5f4444;
+	border-color: #6f7b97;
+	color: #6f7b97;
+}
+
+.ecw-boxerror_sel
+{
+	background-color: #191c24;
+	border-color: #5c0000;
+	color: #5c0000;
+}
+
+.ecw-boxerror_unsel
+{
+	background-color: #191c24;
+	border-color: #606060;
+	color: #5c0000;
+}
+
+.ecw-boxnormal_sel
+{
+	background-color: #191c24;
+	border-color: white;
+	color: white;
+}
+
+.ecw-boxnormal_unsel
+{
+	background-color: #434b5f;
+	border-color: #6f7b97;
+	color: #6f7b97;
+}
+
+.ecw-button
+{
+	width: 64pt;
+  border-color: white;
+}
+
+.ecw-cluebox
+{
+	border-bottom-width: 1px;
+	border-color: #c0c0c0;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-style: solid;
+	border-top-width: 1px;
+	margin-top: 1em;
+	padding-bottom: .5em;
+	padding-left: 0pt;
+	padding-right: 0pt;
+	padding-top: .5em;
+}
+
+.ecw-crosswordarea
+{
+	background-color: transparent;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 2px;
+	padding: .5em;
+	font-family: "Segoe UI", "Verdana", "Arial", sans-serif;
+	font-size: small;
+}
+
+.ecw-copyright
+{
+	margin-bottom: 1em;
+	font-size: x-small;
+	font-family: "Segoe UI", "Franklin Gothic Medium", "Arial", sans-serif;
+}
+
+.ecw-input
+{
+	font-family: "Segoe UI", "Verdana", "Arial", sans-serif;
+  background-color: #191c24;
+  opacity: 0.8;
+}
+
+.ecw-wordlabel
+{
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.ecw-wordinfo
+{
+	font-size: 8pt;
+	color: #808080;
+}
+
+.ecw-worderror
+{
+	color: #5c0000;
+	font-weight: bold;
+	display: none;
+	margin-top: 1em;
+}
