@@ -122,43 +122,28 @@
                 modalBox.classList.remove('hidden')
                 modalbg.classList.remove('hidden')
               });
-            </script> <!--for future me: these are the same things with changed numbers to make it work coz old me was lazy-->
-                        <script>
-                          const modalbg2 = document.getElementById('modal-bg-2');
-                          const modalSwitch2 = document.getElementById('modal-switch-2');
-                          const modalBox2 = document.getElementById('modal-box-2');
-                          const modalClose2 = document.getElementById('modal-close-2');
-                          modalbg2.addEventListener("click", function() {
-                            modalBox2.classList.add('hidden')
-                            modalbg2.classList.add('hidden')
-                          });
-                          modalSwitch2.addEventListener("click", function() {
-                            modalBox2.classList.remove('hidden')
-                            modalbg2.classList.remove('hidden')
-                          });
-                          modalClose2.addEventListener("click", function() {
-                            modalBox2.classList.remove('hidden')
-                            modalbg2.classList.remove('hidden')
-                          });
-                        </script>
-        <script>
-          const loginForm = document.getElementById('login-form');
-      
-          loginForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            const email = event.target.email.value;
-            const password = event.target.password.value;
-      
-            // Define the valid email-password combinations
-            const validCredentials = {
-              'adh9yyyyy@gmail.com': 'lol',
-              'example@example.com': 'example'
-            };
-      
-            if (validCredentials[email] === password) {
-              window.location.href = 'https://www.thedailynews.ink';
-            }
-          });
+            </script>
+            <script> <!--for future me: these are the same things with changed numbers to make it work coz old me was lazy-->
+                const loginForm = document.getElementById('login-form');
+
+                loginForm.addEventListener('submit', function (event) {
+                  event.preventDefault();
+                  const email = event.target.email.value;
+                  const password = event.target.password.value;
+            
+                  // Define the valid email-password-redirection combinations
+                  const validCredentials = {
+                    'adh9yyyyy@gmail.com': { password: 'lol', redirect: 'https://www.thedailynews.ink/v2-countdown' },
+                    'hello@thedailynews.ink': { password: 'hello', redirect: 'https://thedailynews.ink/v2-admin' },
+                    's3093@satollschool.edu.mv': { password: '3093', redirect: 'https://thedailynews.ink/v2-admin' },
+                    's3000@satollschool.edu.mv': { password: '3000', redirect: 'https://thedailynews.ink/v2-404' }
+                    // Add more users here in the same format
+                  };
+            
+                  if (validCredentials[email] && validCredentials[email].password === password) {
+                    window.location.href = validCredentials[email].redirect;
+                  }
+                });
         </script>
       </body>
     </html>
