@@ -116,7 +116,7 @@
                     <!--SCRIPTS/FIREBASE START-->
                     <script type="module">
                       const email = document.getElementById('email').value
-                      var Password = document.getElementById('password').value
+                      const password = document.getElementById('password').value
 
                       import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js'
                       import { } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js"
@@ -150,7 +150,7 @@
       
       
                         submitBtn.addEventListener('click',(e) => {
-                        createUserWithEmailAndPassword(auth, email, Password)
+                        createUserWithEmailAndPassword(auth, email, password)
                         .then((userCredential) => {
                             // Signed in 
                             const user = userCredential.user;
