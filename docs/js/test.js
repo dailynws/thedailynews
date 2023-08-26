@@ -1,16 +1,16 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js';
-import { getAuth, onAuthStateChanged, signInWithPopup, signOut, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
+import { getAuth, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDtrP8PX_1n_q0qQvMvs_llbpfZ03IjyV0",
-  authDomain: "myalphaproject-fa903.firebaseapp.com",
-  databaseURL: "https://myalphaproject-fa903-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "myalphaproject-fa903",
-  storageBucket: "myalphaproject-fa903.appspot.com",
-  messagingSenderId: "625346257628",
-  appId: "1:625346257628:web:0f274e5d64b55ac9100a19",
-  measurementId: "G-NXVSPGLJZC"
-};
+    apiKey: "AIzaSyDtrP8PX_1n_q0qQvMvs_llbpfZ03IjyV0",
+    authDomain: "myalphaproject-fa903.firebaseapp.com",
+    databaseURL: "https://myalphaproject-fa903-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "myalphaproject-fa903",
+    storageBucket: "myalphaproject-fa903.appspot.com",
+    messagingSenderId: "625346257628",
+    appId: "1:625346257628:web:0f274e5d64b55ac9100a19",
+    measurementId: "G-NXVSPGLJZC"
+  };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -42,12 +42,24 @@ function updateLoginButton(user) {
     loginOrOutButton.textContent = "Log in →";
     userMenuButton.style.display = "none"; // Hide user menu button
 
-    // Redirect to the login page when the button is clicked
     loginOrOutButton.addEventListener('click', () => {
-      window.location.href = 'https://thedailynews.ink/v2';
+      // Redirect the user to the login page
+      signInWithRedirect(auth, provider);
     });
   }
 }
+
+// Handle the redirect result
+getRedirectResult(auth)
+  .then((result) => {
+    if (result.user) {
+      // User is signed in
+      console.log('User signed in successfully:', result.user);
+    }
+  })
+  .catch((error) => {
+    console.error('Error handling redirect result:', error);
+  });
 
 // Update the login/logout button and user profile picture based on the authentication state
 onAuthStateChanged(auth, (user) => {
