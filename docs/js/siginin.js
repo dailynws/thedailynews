@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        window.location.href = 'https://thedailynews.ink/redirect/signup-emailpass-normal';
+        window.location.href = 'https://thedailynews.ink/redirect/signin-emailpass-normal';
       })
       .catch((error) => {
         const errorMessage = error.message;
