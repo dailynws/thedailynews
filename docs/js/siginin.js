@@ -3,7 +3,7 @@ import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvide
 
 const firebaseConfig = {
     apiKey: "AIzaSyDtrP8PX_1n_q0qQvMvs_llbpfZ03IjyV0",
-    authDomain: "myalphaproject-fa903.firebaseapp.com",
+    authDomain: "auth.thedailynews.ink",
     databaseURL: "https://myalphaproject-fa903-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "myalphaproject-fa903",
     storageBucket: "myalphaproject-fa903.appspot.com",
