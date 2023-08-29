@@ -14,6 +14,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const provider = new GoogleAuthProvider();
 getRedirectResult(auth)
   .then((result) => {
     function updateLoginButton(user) {
