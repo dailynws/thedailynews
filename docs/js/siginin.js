@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        window.location.href = 'https://thedailynews.ink/redirect/signin-emailpass-normal';
+        window.location.href = 'https://thedailynews.ink/v2-test';
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const token = credential.accessToken;
         const user = result.user;
         // Additional info can be obtained using getAdditionalUserInfo(result)
-        window.location.href = 'https://thedailynews.ink/redirect/signup-google-normal';
+        window.location.href = 'https://thedailynews.ink/v2-test';
       })
       .catch((error) => {
         const errorCode = error.code;
