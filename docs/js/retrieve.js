@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js';
-import { getAuth, getRedirectResult, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
+import { getAuth, getRedirectResult, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDtrP8PX_1n_q0qQvMvs_llbpfZ03IjyV0",
