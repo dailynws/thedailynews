@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js';
-import { getAuth, signInWithRedirect, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
+import { getAuth, signInWithRedirect, onAuthStateChanged, signOut, inMemoryPersistence, browserSessionPersistence } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDtrP8PX_1n_q0qQvMvs_llbpfZ03IjyV0",
@@ -15,21 +15,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Enable local persistence
-auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-
 // Function to update login button and user profile picture
 function updateLoginButton(user) {
   const loginButton = document.getElementById('loginButton'); // Replace with your login button ID
   const userMenuButton = document.getElementById('pfpButton');
   const userProfilePicture = document.getElementById('pfpImg');
-  
-  if (loginButton) {
-    loginButton.addEventListener('click', () => {
-      const currentPageUrl = window.location.href;
-      window.location.href = 'https://thedailynews.ink/login?redirect=' + encodeURIComponent(currentPageUrl);
-    });
-  }
 
   if (user) {
     // User is logged in
@@ -58,26 +48,24 @@ function updateLoginButton(user) {
   }
 }
 
-// Update the login/logout button and user profile picture based on the authentication state
-onAuthStateChanged(auth, (user) => {
-  updateLoginButton(user);
-  const userMenuButton = document.getElementById('pfpButton');
-  const userProfilePicture = document.getElementById('pfpImg');
+// Set the desired persistence type
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    // Update the login/logout button and user profile picture based on the authentication state
+    onAuthStateChanged(auth, (user) => {
+      updateLoginButton(user);
+      const userMenuButton = document.getElementById('pfpButton');
+      const userProfilePicture = document.getElementById('pfpImg');
 
-  if (user) {
-    userMenuButton.style.display = 'block';
-    userProfilePicture.src = user.photoURL;
-  } else {
-    userMenuButton.style.display = 'none';
-    userProfilePicture.src = ''; // Clear the source to hide the image
-  }
-});
-
-// Handle login button click
-const loginButton = document.getElementById('loginButton'); // Replace with the actual ID of your login button
-if (loginButton) {
-  loginButton.addEventListener('click', () => {
-    // Redirect the user to the login page
-    window.location.href = 'https://thedailynews.ink/v2'; // Replace with your login page URL
+      if (user) {
+        userMenuButton.style.display = 'block';
+        userProfilePicture.src = user.photoURL;
+      } else {
+        userMenuButton.style.display = 'none';
+        userProfilePicture.src = ''; // Clear the source to hide the image
+      }
+    });
+  })
+  .catch((error) => {
+    console.error('Error setting persistence:', error);
   });
-}
