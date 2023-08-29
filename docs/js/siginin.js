@@ -19,39 +19,40 @@ const provider = new GoogleAuthProvider();
 document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('submitBtn');
   const googleBtn = document.getElementById('googleBtn');
+  const currentPageUrl = window.location.href;
 
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
-
+  
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-
+  
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        window.location.href = 'https://thedailynews.ink/v2-test';
+        window.location.href = currentPageUrl; // Redirect back to the original page
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log('EMAIL/PASSWORD ERROR!', errorMessage)
+        console.log('EMAIL/PASSWORD ERROR!', errorMessage);
       });
   });
-
+  
   googleBtn.addEventListener('click', (e) => {
     e.preventDefault();
-
+  
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
         // Additional info can be obtained using getAdditionalUserInfo(result)
-        window.location.href = 'https://thedailynews.ink/v2-test';
+        window.location.href = currentPageUrl; // Redirect back to the original page
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log('GOOGLE SIGN IN ERROR!', errorMessage)
+        console.log('GOOGLE SIGN IN ERROR!', errorMessage);
       });
-  });
+  })
 });

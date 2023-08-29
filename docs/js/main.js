@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js';
-import { getRedirectResult, signInWithRedirect, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
+import { getAuth, getRedirectResult, signInWithRedirect, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDtrP8PX_1n_q0qQvMvs_llbpfZ03IjyV0",
@@ -41,7 +41,6 @@ getRedirectResult(auth)
     
         loginButton.addEventListener('click', () => {
           // Redirect the user to the login page
-          signInWithRedirect(auth, provider);
         });
       }
     };
@@ -67,7 +66,5 @@ const loginButton = document.getElementById('loginButton'); // Replace with the 
 if (loginButton) {
   loginButton.addEventListener('click', () => {
     // Redirect the user to the login page
-    signInWithRedirect(auth, provider);
-    window.location.href = 'https://thedailynews.ink/v2';
   });
 }
