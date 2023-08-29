@@ -14,5 +14,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const provider = new GoogleAuthProvider();
 
 signInWithRedirect(auth, provider);
