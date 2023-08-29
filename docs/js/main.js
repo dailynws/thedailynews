@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js';
-import { getAuth, getRedirectResult, signInWithRedirect, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
+import { getAuth, signInWithRedirect, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDtrP8PX_1n_q0qQvMvs_llbpfZ03IjyV0",
@@ -15,50 +15,62 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-getRedirectResult(auth)
-  .then((result) => {
-    function updateLoginButton(user) {
-      const loginButton = document.getElementById('loginButton');
-      if (user) {
-        // User is logged in
-        loginButton.textContent = "Log out ←⠀";
-        userMenuButton.style.display = "block"; // Show user menu button
-        userProfilePicture.src = user.photoURL; // Set user profile picture
-    
-        loginButton.addEventListener('click', () => {
-          signOut(auth)
-            .then(() => {
-              console.log('User signed out successfully.');
-            })
-            .catch((error) => {
-              console.error('Error signing out:', error);
-            });
-        });
-      } else {
-        // User is not logged in
-        loginButton.textContent = "Log in →";
-        userMenuButton.style.display = "none"; // Hide user menu button
-    
-        loginButton.addEventListener('click', () => {
-          // Redirect the user to the login page
-        });
-      }
-    };
+// Enable local persistence
+auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
-    // Update the login/logout button and user profile picture based on the authentication state
-    onAuthStateChanged(auth, (user) => {
-      updateLoginButton(user);
-          const userMenuButton = document.getElementById('pfpButton');
-    const userProfilePicture = document.getElementById('pfpImg');
-    
-    if (user) {
-        userMenuButton.style.display = 'block';
-        userProfilePicture.src = user.photoURL;
-    } else {
-        userMenuButton.style.display = 'none';
-        userProfilePicture.src = ''; // Clear the source to hide the image
-    }
-  });
+// Function to update login button and user profile picture
+function updateLoginButton(user) {
+  const loginButton = document.getElementById('loginButton'); // Replace with your login button ID
+  const userMenuButton = document.getElementById('pfpButton');
+  const userProfilePicture = document.getElementById('pfpImg');
+  
+  if (loginButton) {
+    loginButton.addEventListener('click', () => {
+      const currentPageUrl = window.location.href;
+      window.location.href = 'https://thedailynews.ink/login?redirect=' + encodeURIComponent(currentPageUrl);
+    });
+  }
+
+  if (user) {
+    // User is logged in
+    loginButton.textContent = "Log out ←⠀";
+    userMenuButton.style.display = "block"; // Show user menu button
+    userProfilePicture.src = user.photoURL; // Set user profile picture
+
+    loginButton.addEventListener('click', () => {
+      signOut(auth)
+        .then(() => {
+          console.log('User signed out successfully.');
+        })
+        .catch((error) => {
+          console.error('Error signing out:', error);
+        });
+    });
+  } else {
+    // User is not logged in
+    loginButton.textContent = "Log in →";
+    userMenuButton.style.display = "none"; // Hide user menu button
+
+    loginButton.addEventListener('click', () => {
+      // Redirect the user to the login page
+      window.location.href = 'https://thedailynews.ink/v2'; // Replace with your login page URL
+    });
+  }
+}
+
+// Update the login/logout button and user profile picture based on the authentication state
+onAuthStateChanged(auth, (user) => {
+  updateLoginButton(user);
+  const userMenuButton = document.getElementById('pfpButton');
+  const userProfilePicture = document.getElementById('pfpImg');
+
+  if (user) {
+    userMenuButton.style.display = 'block';
+    userProfilePicture.src = user.photoURL;
+  } else {
+    userMenuButton.style.display = 'none';
+    userProfilePicture.src = ''; // Clear the source to hide the image
+  }
 });
 
 // Handle login button click
@@ -66,5 +78,6 @@ const loginButton = document.getElementById('loginButton'); // Replace with the 
 if (loginButton) {
   loginButton.addEventListener('click', () => {
     // Redirect the user to the login page
+    window.location.href = 'https://thedailynews.ink/v2'; // Replace with your login page URL
   });
 }
