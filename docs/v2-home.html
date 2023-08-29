@@ -32,7 +32,7 @@
             }
         </script>
         <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-        <link rel="stylesheet" href="css/v2-home.css">
+        <link rel="stylesheet" href="css/dailynws.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-15NNBBMEZD"></script>
@@ -45,14 +45,14 @@
         </script>
       </head>
       <!--The Start Of Something Horrible-->
-      <body class="h-full bg-white dark:bg-gray-900 no-scrollbar">
+      <body class="h-full bg-white dark:bg-gray-900">
         <div class="bg-white dark:bg-gray-900 dark:text-white">
           <header class="absolute inset-x-0 top-0 z-50">
             <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
               <div class="flex lg:flex-1">
-                <a href="#" class="-m-1.5 p-1.5">
+                <a href="https://thedailynews.ink/" class="-m-1.5 p-1.5">
                   <span class="sr-only">Your Company</span>
-                  <img class="h-8 w-auto" src="https://thedailynews.ink/assets/svg/favicon.svg" alt="">
+                  <img class="h-8 w-auto" src="https://thedailynews.ink/assets/svg/favicon.svg" alt="Daily Nws Logo">
                 </a>
               </div>
               <div class="flex lg:hidden">
@@ -80,182 +80,96 @@
                     <img id="pfpImg" class="h-8 w-8 rounded-full" src="https://i.pinimg.com/736x/00/80/ee/0080eeaeaa2f2fba77af3e1efeade565.jpg" alt="">
                 </button>
             </div>
+
             </nav>
-            <!-- Mobile menu, show/hide based on menu open state. -->
-            <div class="lg:hidden hidden" role="dialog" aria-modal="true">
-              <!-- Background backdrop, show/hide based on slide-over state. -->
-              <div class="fixed inset-0 z-50"></div>
-              <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                <div class="flex items-center justify-between">
-                  <a href="#" class="-m-1.5 p-1.5">
-                    <span class="sr-only">Your Company</span>
-                    <img class="h-8 w-auto" src="https://thedailynews.ink/assets/svg/favicon.svg" alt="">
-                  </a>
-                  <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                    <span class="sr-only">Close menu</span>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="mt-6 flow-root">
-                  <div class="-my-6 divide-y divide-gray-500/10">
-                    <div class="space-y-2 py-6">
-                      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
-                      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
-                      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
-                      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
-                    </div>
-                    <div class="py-6">
-                      <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
-                    </div>
+          <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#80ffff] to-[#adfc89] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+          </div>
+            <section>
+              <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                  <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+                      <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Daily Nws</h2>
+                      <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">V2.</p>
+                  </div> 
+                  <div class="grid gap-8 lg:grid-cols-2">
+                      <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                          <div class="flex justify-between items-center mb-5 text-gray-500">
+                              <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                                  <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
+                                  Recording
+                              </span>
+                              <span class="text-sm">14 days ago</span>
+                          </div>
+                          <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">Title Here</a></h2><!--TITLE-->
+                          <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Etiam id sapien non elit sollicitudin egestas eget nec tellus. Donec malesuada massa sit amet erat dapibus aliquam. Nunc in massa tincidunt, sollicitudin purus sed, facilisis elit.</p>
+                          <div class="flex justify-between items-center">
+                              <div class="flex items-center space-x-4">
+                                  <img class="w-7 h-7 rounded-full" src="https://i.pinimg.com/736x/00/80/ee/0080eeaeaa2f2fba77af3e1efeade565.jpg" alt="Jese Leos avatar" />
+                                  <span class="font-medium dark:text-white">
+                                      Ahmed Mohamed
+                                  </span>
+                              </div>
+                              <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
+                                  Read more
+                                  <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                              </a>
+                          </div>
+                      </article> 
+                      <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                          <div class="flex justify-between items-center mb-5 text-gray-500">
+                              <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                                  <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"></path><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path></svg>
+                                  Article
+                              </span>
+                              <span class="text-sm">14 days ago</span>
+                          </div>
+                          <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">Title Here</a></h2><!--TITLE-->
+                          <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Etiam id sapien non elit sollicitudin egestas eget nec tellus. Donec malesuada massa sit amet erat dapibus aliquam. Nunc in massa tincidunt, sollicitudin purus sed, facilisis elit.
+
+                          </p>
+                          <div class="flex justify-between items-center">
+                              <div class="flex items-center space-x-4">
+                                  <img class="w-7 h-7 rounded-full" src="https://i.pinimg.com/736x/00/80/ee/0080eeaeaa2f2fba77af3e1efeade565.jpg" alt="Bonnie Green avatar" />
+                                  <span class="font-medium dark:text-white">
+                                      Ahmed Mohamed
+                                  </span>
+                              </div>
+                              <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
+                                  Read more
+                                  <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                              </a>
+                          </div>
+                      </article>                  
+                  </div>  
+                  <div class="grid gap-8 lg:col-span-2 pt-8">
+                    <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                      <div class="flex justify-between items-center mb-5 text-gray-500">
+                          <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                              <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"></path><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path></svg>
+                              Article
+                          </span>
+                          <span class="text-sm">14 days ago</span>
+                      </div>
+                      <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">Title Here</a></h2><!--TITLE-->
+                      <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Etiam id sapien non elit sollicitudin egestas eget nec tellus. Donec malesuada massa sit amet erat dapibus aliquam. Nunc in massa tincidunt, sollicitudin purus sed, facilisis elit. Nam cursus erat tellus, vitae interdum nibh molestie vel. Vivamus fringilla eget quam vitae sollicitudin. Maecenas lobortis ac elit sit amet congue. Aenean tristique felis vitae velit sagittis placerat. Fusce blandit nulla id luctus accumsan. Nulla condimentum scelerisque justo, vitae elementum velit congue ac. Morbi sit amet efficitur ex, at cursus lorem. Vestibulum vel bibendum magna, id luctus erat. Donec vehicula, felis ac accumsan porttitor, sem urna consectetur purus, eget volutpat tellus diam vel justo. Phasellus eget mauris pellentesque, varius ipsum in, blandit turpis. Integer a risus quis tellus convallis pharetra nec a risus. Pellentesque ultricies turpis vel tristique tincidunt. Integer tellus lorem, hendrerit nec fringilla eu, varius eu dolor.</p>
+                      <div class="flex justify-between items-center">
+                          <div class="flex items-center space-x-4">
+                              <img class="w-7 h-7 rounded-full" src="https://i.pinimg.com/736x/00/80/ee/0080eeaeaa2f2fba77af3e1efeade565.jpg" alt="Bonnie Green avatar" />
+                              <span class="font-medium dark:text-white">
+                                  Ahmed Mohamed
+                              </span>
+                          </div>
+                          <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
+                              Read more
+                              <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                          </a>
+                      </div>
+                  </article>
                   </div>
-                </div>
               </div>
-            </div>
-          </header>
-
-          <!--START OF THOSE UGLY SHITS-->
-                 <!-- Container for demo purpose -->
-<div class="container my-24 mx-auto md:px-6">
-<!--Container very very test 1-->
-<div class="mb-6 lg:mb-0 ">
-  <div class="relative block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-gray-800">
-    <div class="flex h-[150px]">
-      <div class="relative mx-4 -mt-4 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
-        data-te-ripple-init data-te-ripple-color="light">
-
-        <!--REPLACE NUMBER.-->
-        <img src="https://thedailynews.ink/assets/img/1.jpg" class="w-full" />
-
-
-        <a href="#!">
-          <div
-            class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="p-6">
-      <!--REPLACE TEXT-->
-      <h5 class="mb-3 text-lg font-bold">[INSERT TITLE HERE]</h5>
-      <p class="mb-4 text-gray-500 dark:text-gray-300">
-        <small>Published On 19th August 2023 by <u><a href="https://thedailynews.ink/ahmedmohamed">Ahmed Mohamed</a></u></small>
-      </p>
-      <p class="mb-4 pb-2 text-sm">[Insert Description Here]</p>
-      <a href="#!" data-te-ripple-init data-te-ripple-color="light"
-        class="inline-block rounded-full bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal dark:bg-gray-900 shadow-[0_4px_9px_-4px_#06b6d4] transition duration-150 ease-in-out hover:bg-cyan-600 hover:text-white hover:shadow-cyan-500 focus:bg-primary-600 focus:shadow-cyan-500 focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-cyan-600 dark:shadow-cyan-700 dark:hover:shadow-cyan-700 dark:focus:shadow-cyan-800 dark:text-white text-black dark:active:shadow-cyan-900">Read
-        more</a>
-    </div>
-  </div>
-</div>
-<br>
-
-  <!--Container 1-->
-    <div class="grid gap-6 lg:grid-cols-3 xl:gap-x-12 pt-7">
-      <div class="mb-6 lg:mb-0">
-        <div
-          class="relative block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-gray-800">
-          <div class="flex">
-            <div
-              class="relative mx-4 -mt-4 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
-              data-te-ripple-init data-te-ripple-color="light">
-
-              <!--REPLACE NUMBER.-->
-              <img src="https://thedailynews.ink/assets/img/1.jpg" class="w-full" />
-
-
-              <a href="#!">
-                <div
-                  class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="p-6">
-            <!--REPLACE TEXT-->
-            <h5 class="mb-3 text-lg font-bold">[INSERT TITLE HERE]</h5>
-            <p class="mb-4 text-gray-500 dark:text-gray-300">
-              <small>Published On 19th August 2023 by <u><a href="https://thedailynews.ink/ahmedmohamed">Ahmed Mohamed</a></u></small>
-            </p>
-            <p class="mb-4 pb-2 text-sm">[Insert Description Here]</p>
-            <a href="#!" data-te-ripple-init data-te-ripple-color="light"
-              class="inline-block rounded-full bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal dark:bg-gray-900 shadow-[0_4px_9px_-4px_#06b6d4] transition duration-150 ease-in-out hover:bg-cyan-600 hover:text-white hover:shadow-cyan-500 focus:bg-primary-600 focus:shadow-cyan-500 focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-cyan-600 dark:shadow-cyan-700 dark:hover:shadow-cyan-700 dark:focus:shadow-cyan-800 dark:text-white text-black dark:active:shadow-cyan-900">Read
-              more</a>
-          </div>
-        </div>
-      </div>
-
-
-      <!--Container 2-->
-      <div class="mb-6 lg:mb-0">
-        <div
-          class="relative block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-gray-800/90">
-          <div class="flex">
-            <div
-              class="relative mx-4 -mt-4 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
-              data-te-ripple-init data-te-ripple-color="light">
-
-              <!--REPLACE NUMBER.-->
-              <img src="https://thedailynews.ink/assets/img/1.jpg" class="w-full" />
-
-
-              <a href="#!">
-                <div
-                  class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="p-6">
-            <h5 class="mb-3 text-lg font-bold">[INSERT TITLE HERE]</h5>
-            <p class="mb-4 text-neutral-500 dark:text-neutral-300">
-              <small>Published On 19th August 2023 by <u><a href="https://thedailynews.ink/ahmedmohamed">Ahmed Mohamed</a></u></small>
-            </p>
-            <p class="mb-4 pb-2 text-sm">[Insert Description Here]</p>
-            <a href="#!" data-te-ripple-init data-te-ripple-color="light"
-              class="inline-block rounded-full bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal dark:bg-gray-900 shadow-[0_4px_9px_-4px_#06b6d4] transition duration-150 ease-in-out hover:bg-cyan-600 hover:text-white hover:shadow-cyan-500 focus:bg-primary-600 focus:shadow-cyan-500 focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-cyan-600 dark:shadow-cyan-700 dark:hover:shadow-cyan-700 dark:focus:shadow-cyan-800 dark:text-white text-black dark:active:shadow-cyan-900">Read
-              more</a>
-          </div>
-        </div>
-      </div>
-
-      
-      <!--Container 3-->
-      <div class="mb-0">
-        <div
-          class="relative block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-gray-800/90">
-          <div class="flex">
-            <div
-              class="relative mx-4 -mt-4 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20 bg-black/50"
-              data-te-ripple-init data-te-ripple-color="light">
-
-              <!--REPLACE NUMBER.-->
-              <img src="https://thedailynews.ink/assets/img/1.jpg" class="w-full" />
-
-
-              <a href="#!">
-                <div
-                  class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="p-6">
-            <h5 class="mb-3 text-lg font-bold">[INSERT TITLE HERE]</h5>
-            <p class="mb-4 text-neutral-500 dark:text-neutral-300">
-              <small>Published On 19th August 2023 by <u><a href="https://thedailynes.ink/ahmedmohamed">Ahmed Mohamed</a></u></small>
-            </p>
-            <p class="mb-4 pb-2 text-sm">[Insert Description Here]</p>
-            <a href="#!" data-te-ripple-init data-te-ripple-color="light"
-              class="inline-block rounded-full bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal dark:bg-gray-900 shadow-[0_4px_9px_-4px_#06b6d4] transition duration-150 ease-in-out hover:bg-cyan-600 hover:text-white hover:shadow-cyan-500 focus:bg-primary-600 focus:shadow-cyan-500 focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-cyan-600 dark:shadow-cyan-700 dark:hover:shadow-cyan-700 dark:focus:shadow-cyan-800 dark:text-white text-black dark:active:shadow-cyan-900">Read
-              more</a>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-      </body>
+            </section>
+</body><div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+                        <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#80ffff] to-[#adfc89] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+                      </div>
       <script type="module" src="js/main.js"></script>
     </html>
