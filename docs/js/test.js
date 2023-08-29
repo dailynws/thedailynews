@@ -3,7 +3,7 @@ import { getAuth, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithRed
 
 const firebaseConfig = {
   apiKey: "AIzaSyDtrP8PX_1n_q0qQvMvs_llbpfZ03IjyV0",
-  authDomain: "auth.thedailynews.ink/__/auth/handler",
+  authDomain: "auth.thedailynews.ink",
   databaseURL: "https://myalphaproject-fa903-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "myalphaproject-fa903",
   storageBucket: "myalphaproject-fa903.appspot.com",
