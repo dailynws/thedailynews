@@ -55,10 +55,3 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
-
-passwordInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault(); // Prevent form submission
-      submitBtn.click();
-    }
-  });
