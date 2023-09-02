@@ -40,7 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log('EMAIL/PASSWORD ERROR!', errorMessage);
+        const errorCode = error.code;
+        console.log('signInWithEmailAndPassword Error Message:', errorMessage);
+        console.log('signInWithEmailAndPassword Error Code:', errorCode);
+        if (errorCode === 'auth/user-disabled') {
+          // Redirect the user to a page for disabled accounts
+          window.location.href = 'https://thedailynews.ink/account-disabled'; // Replace with the appropriate URL
+        }
       });
   });
 
@@ -58,7 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log('GOOGLE SIGN IN ERROR!', errorMessage);
+        const errorCode = error.code;
+        console.log('signInWithEmailAndPassword Error Message:', errorMessage);
+        console.log('signInWithEmailAndPassword Error Code:', errorCode);
+        if (errorCode === 'auth/user-disabled') {
+          // Redirect the user to a page for disabled accounts
+          window.location.href = 'https://thedailynews.ink/account-disabled'; // Replace with the appropriate URL
+        }
       });
   });
 });

@@ -1,14 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js'
 import { } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js"
-
-// If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
-import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js'
-
-// Add Firebase products that you want to use
 import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js'
 
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
   apiKey: "AIzaSyDtrP8PX_1n_q0qQvMvs_llbpfZ03IjyV0",
   authDomain: "auth.thedailynews.ink",
@@ -22,9 +15,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
-// Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
   submitBtn.addEventListener('click',(e) => {

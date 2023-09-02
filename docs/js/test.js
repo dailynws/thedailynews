@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js';
-import { getAuth, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithRedirect } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
+import { getAuth, signInWithRedirect, onAuthStateChanged, signOut, GoogleAuthProvider, inMemoryPersistence, browserSessionPersistence, setPersistence } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDtrP8PX_1n_q0qQvMvs_llbpfZ03IjyV0",
@@ -14,21 +14,20 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
 
-// Function to update the login/logout button and user profile picture
+// Function to update login button and user profile picture
 function updateLoginButton(user) {
-  const loginOrOutButton = document.getElementById('loginorout');
-  const userMenuButton = document.getElementById('user-menu-button');
-  const userProfilePicture = document.getElementById('imgPfp');
+  const loginButton = document.getElementById('loginButton'); // Replace with your login button ID
+  const userMenuButton = document.getElementById('pfpButton');
+  const userProfilePicture = document.getElementById('pfpImg');
 
   if (user) {
     // User is logged in
-    loginOrOutButton.textContent = "Log out ←⠀";
+    loginButton.textContent = "Log out ←⠀";
     userMenuButton.style.display = "block"; // Show user menu button
     userProfilePicture.src = user.photoURL; // Set user profile picture
 
-    loginOrOutButton.addEventListener('click', () => {
+    loginButton.addEventListener('click', () => {
       signOut(auth)
         .then(() => {
           console.log('User signed out successfully.');
@@ -39,27 +38,57 @@ function updateLoginButton(user) {
     });
   } else {
     // User is not logged in
-    loginOrOutButton.textContent = "Log in →";
+    loginButton.textContent = "Log in →";
     userMenuButton.style.display = "none"; // Hide user menu button
 
-    loginOrOutButton.addEventListener('click', () => {
+    loginButton.addEventListener('click', () => {
       // Redirect the user to the login page
-      signInWithRedirect(auth, provider);
+      window.location.href = 'login.html'; // Replace with your login page URL
     });
   }
 }
 
-// Update the login/logout button and user profile picture based on the authentication state
-onAuthStateChanged(auth, (user) => {
-    updateLoginButton(user);
-    const userMenuButton = document.getElementById('user-menu-button');
-    const userProfilePicture = document.getElementById('imgPfp');
-    
-    if (user) {
-        userMenuButton.style.display = 'block';
-        userProfilePicture.src = user.photoURL;
-    } else {
+// Set the desired persistence type
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    // Update the login/logout button and user profile picture based on the authentication state
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        try {
+          const idTokenResult = await user.getIdTokenResult();
+          
+          // Check if the 'disabled' claim is true
+          if (idTokenResult.claims.disabled) {
+            // Show the overlay if the user's account is disabled
+            document.getElementById('overlay').style.display = 'block';
+            // Hide other user-related elements
+            document.getElementById('loginButton').style.display = 'none';
+            document.getElementById('pfpButton').style.display = 'none';
+            document.getElementById('pfpImg').style.display = 'none';
+          } else {
+            updateLoginButton(user);
+            const userMenuButton = document.getElementById('pfpButton');
+            const userProfilePicture = document.getElementById('pfpImg');
+        
+            userMenuButton.style.display = 'block';
+            userProfilePicture.src = user.photoURL;
+          }
+        } catch (error) {
+          console.error('Error getting ID token result:', error);
+        }
+      } else {
+        // User is not logged in
+        updateLoginButton(null);
+        const userMenuButton = document.getElementById('pfpButton');
+        const userProfilePicture = document.getElementById('pfpImg');
+      
         userMenuButton.style.display = 'none';
         userProfilePicture.src = ''; // Clear the source to hide the image
-    }
-});
+      }
+    });
+  })
+  .catch((error) => {
+    console.error('Error setting persistence:', error);
+  });
+
+// Your other JavaScript code goes here
