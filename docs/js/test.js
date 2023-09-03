@@ -43,7 +43,7 @@ function updateLoginButton(user) {
 
     loginButton.addEventListener('click', () => {
       // Redirect the user to the login page
-      window.location.href = 'login.html'; // Replace with your login page URL
+      window.location.href = 'https://thedailynews.ink/v2'; // Replace with your login page URL
     });
   }
 }
@@ -61,6 +61,7 @@ setPersistence(auth, browserSessionPersistence)
           if (idTokenResult.claims.disabled) {
             // Show the overlay if the user's account is disabled
             document.getElementById('overlay').style.display = 'block';
+            window.location.href = 'https://thedailynews.ink/v2-disabled';
             // Hide other user-related elements
             document.getElementById('loginButton').style.display = 'none';
             document.getElementById('pfpButton').style.display = 'none';

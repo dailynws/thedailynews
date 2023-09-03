@@ -52,15 +52,37 @@ function updateLoginButton(user) {
 setPersistence(auth, browserSessionPersistence)
   .then(() => {
     // Update the login/logout button and user profile picture based on the authentication state
-    onAuthStateChanged(auth, (user) => {
-      updateLoginButton(user);
-      const userMenuButton = document.getElementById('pfpButton');
-      const userProfilePicture = document.getElementById('pfpImg');
-
+    onAuthStateChanged(auth, async (user) => {
       if (user) {
-        userMenuButton.style.display = 'block';
-        userProfilePicture.src = user.photoURL;
+        try {
+          const idTokenResult = await user.getIdTokenResult();
+          
+          // Check if the 'disabled' claim is true
+          if (idTokenResult.claims.disabled) {
+            // Show the overlay if the user's account is disabled
+            document.getElementById('overlay').style.display = 'block';
+            window.location.href = 'https://thedailynews.ink/v2-disabled';
+            // Hide other user-related elements
+            document.getElementById('loginButton').style.display = 'none';
+            document.getElementById('pfpButton').style.display = 'none';
+            document.getElementById('pfpImg').style.display = 'none';
+          } else {
+            updateLoginButton(user);
+            const userMenuButton = document.getElementById('pfpButton');
+            const userProfilePicture = document.getElementById('pfpImg');
+        
+            userMenuButton.style.display = 'block';
+            userProfilePicture.src = user.photoURL;
+          }
+        } catch (error) {
+          console.error('Error getting ID token result:', error);
+        }
       } else {
+        // User is not logged in
+        updateLoginButton(null);
+        const userMenuButton = document.getElementById('pfpButton');
+        const userProfilePicture = document.getElementById('pfpImg');
+      
         userMenuButton.style.display = 'none';
         userProfilePicture.src = ''; // Clear the source to hide the image
       }

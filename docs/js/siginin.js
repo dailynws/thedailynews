@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('signInWithEmailAndPassword Error Code:', errorCode);
         if (errorCode === 'auth/user-disabled') {
           // Redirect the user to a page for disabled accounts
-          window.location.href = 'https://thedailynews.ink/account-disabled'; // Replace with the appropriate URL
+          window.location.href = 'https://thedailynews.ink/v2-disabled'; // Replace with the appropriate URL
         }
       });
   });
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('signInWithEmailAndPassword Error Code:', errorCode);
         if (errorCode === 'auth/user-disabled') {
           // Redirect the user to a page for disabled accounts
-          window.location.href = 'https://thedailynews.ink/account-disabled'; // Replace with the appropriate URL
+          window.location.href = 'https://thedailynews.ink/v2-disabled'; // Replace with the appropriate URL
         }
       });
   });
