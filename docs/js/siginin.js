@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
           window.location.href = decodeURIComponent(redirectUrl);
         } else {
           // Redirect to a default page if no redirect URL is captured
-          window.location.href = 'https://thedailynews.ink/v2-home'; // Replace with your default page URL
+          window.location.href = 'https://thedailynews.ink/v2.1-home'; // Replace with your default page URL
         }
       })
       .catch((error) => {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
           window.location.href = decodeURIComponent(redirectUrl);
         } else {
           // Redirect to a default page if no redirect URL is captured
-          window.location.href = 'https://thedailynews.ink/v2-home'; // Replace with your default page URL
+          window.location.href = 'https://thedailynews.ink/v2.1-home'; // Replace with your default page URL
         }
       })
       .catch((error) => {
